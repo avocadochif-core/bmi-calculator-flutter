@@ -1,3 +1,5 @@
+import 'package:bmi_calculator/metrics_page.dart';
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,25 +13,15 @@ class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('BMI Calculator'),
-          centerTitle: true,
+      theme: ThemeData(
+        primaryColor: Color(0xFF090C22),
+        scaffoldBackgroundColor: Color(0xFF090C22), //0xFF101427
+        accentColor: Colors.pink,
+        textTheme: TextTheme(
+          bodyText2: TextStyle(color: Colors.white),
         ),
-        body: MetricsPage(),
       ),
+      home: MetricsPage(),
     );
-  }
-}
-
-class MetricsPage extends StatefulWidget {
-  @override
-  _MetricsPageState createState() => _MetricsPageState();
-}
-
-class _MetricsPageState extends State<MetricsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
